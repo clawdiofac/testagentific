@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard de egresos y gastos</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="dashboard">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Dashboard inicial</p>
+          <h1>Egresos y gastos en una sola vista</h1>
+          <p class="hero-copy">
+            Consulta el resumen general, los movimientos mas recientes y el
+            detalle por categoria.
+          </p>
+        </div>
+        <div class="hero-panel">
+          <span>Periodo actual</span>
+          <strong>Marzo 2026</strong>
+        </div>
+      </section>
+
+      <section class="summary-grid" aria-label="Resumen general">
+        <article class="summary-card accent-red">
+          <p>Total de egresos</p>
+          <strong id="total-egresos">$0</strong>
+        </article>
+        <article class="summary-card accent-gold">
+          <p>Total de gastos</p>
+          <strong id="total-gastos">$0</strong>
+        </article>
+        <article class="summary-card accent-blue">
+          <p>Movimientos registrados</p>
+          <strong id="total-movimientos">0</strong>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-title">Detalle por categoria</p>
+              <span class="panel-subtitle">Totales agrupados automaticamente</span>
+            </div>
+          </div>
+          <div id="categorias" class="category-list" aria-live="polite"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-title">Movimientos recientes</p>
+              <span class="panel-subtitle">Ultimos registros de egresos y gastos</span>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Concepto</th>
+                  <th>Categoria</th>
+                  <th>Tipo</th>
+                  <th>Monto</th>
+                </tr>
+              </thead>
+              <tbody id="movimientos"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
